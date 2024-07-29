@@ -1,0 +1,51 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.7"]
+
+[tool.poetry]
+name = "tlk"
+version = "0.1.0"
+description = "Personnal toolkit"
+packages = [
+    { include = "tlk", from = "src" },
+]
+
+readme = "README.md"
+repository = "https://github.com/dithyrambe/tlk"
+authors = []
+keywords = []
+classifiers = []
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0.0"
+typer = "^0.12.3"
+
+[tool.poetry.scripts]
+tlk = "tlk.cli.main:app"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.26.0"
+pytest = "^8.3.2"
+poetry-dynamic-versioning = "^1.4.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+target_version = ['py12']
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+pattern  = "^(?P<base>\\d+\\.\\d+\\.\\d+)(-?((?P<stage>[a-zA-Z]+)\\.?(?P<revision>\\d+)?))?"
+
