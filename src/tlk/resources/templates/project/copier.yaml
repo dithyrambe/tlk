@@ -1,0 +1,14 @@
+name:
+  type: str
+  help: "The name of the project / component"
+
+python_version:
+  type: str
+  help: "The Python version to use"
+  default: "3.12"
+
+poetry_version:
+  type: str
+  help: "The Python version to use"
+  default: "1.8.2"
+
