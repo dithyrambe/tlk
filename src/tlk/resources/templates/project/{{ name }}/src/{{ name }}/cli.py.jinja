@@ -2,12 +2,10 @@ from rich.console import Console
 from typer import Typer
 import typer
 
-from tlk.constants import PACKAGE_NAME
-from tlk.cli.project import app as project_app
+from {{ name }}.constants import PACKAGE_NAME
 
 
 app = Typer(add_completion=False)
-app.add_typer(project_app, name="project")
 
 
 def show_version(flag: bool):
