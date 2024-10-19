@@ -13,7 +13,7 @@ app.add_typer(project_app, name="project")
 def show_version(flag: bool):
     if flag:
         from importlib.metadata import version
-        
+
         console = Console()
         console.print(f"release [bold]{version(PACKAGE_NAME)}[bold]")
         raise typer.Exit()

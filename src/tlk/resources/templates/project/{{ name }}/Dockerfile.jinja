@@ -10,7 +10,7 @@ COPY . .
 RUN poetry build --format wheel --output ./dist
 RUN poetry run pip install ./dist/*
 
-FROM python:3.{{ python_version }}-slim AS prod
+FROM python:3.{{ python_version }}-slim
 
 RUN apt-get update && \
     apt-get install -y build-essential git && \

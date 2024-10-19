@@ -2,7 +2,7 @@ from rich.console import Console
 from typer import Typer
 import typer
 
-from {{ name }}.constants import PACKAGE_NAME
+from {{ pkg_name }}.constants import PROJECT_NAME
 
 
 app = Typer(add_completion=False)
@@ -11,9 +11,9 @@ app = Typer(add_completion=False)
 def show_version(flag: bool):
     if flag:
         from importlib.metadata import version
-        
+
         console = Console()
-        console.print(f"release [bold]{version(PACKAGE_NAME)}[bold]")
+        console.print(f"release [bold]{version(PROJECT_NAME)}[bold]")
         raise typer.Exit()
 
 
